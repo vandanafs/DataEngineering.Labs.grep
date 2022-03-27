@@ -17,10 +17,26 @@ grep -e  "start"  transaction_data_daily_event_log_20190129.dat
 
 
 Once you've reviewed these results, repeat the process but this time using the -c flag to determine how many matching occurences were found.
+grep -c  "start"  transaction_data_daily_event_log_20190129.dat
+12
+
 ```
 PROVIDE A SOLUTION HERE
-```
 
+```
+grep -e  "complete"  transaction_data_daily_event_log_20190129.dat
+DIDLM230::transaction_data_upload_complete_00_20190129_000053
+DIDLM230::transaction_data_upload_complete_01_20190129_020035
+DIDLM230::transaction_data_upload_complete_02_20190129_040015
+DIDLM230::transaction_data_upload_complete_03_20190129_060124
+DIDLM230::transaction_data_upload_complete_04_20190129_083522
+DIDLM230::transaction_data_upload_complete_05_20190129_102311
+DIDLM230::transaction_data_upload_complete_06_20190129_121750
+DIDLM230::transaction_data_upload_complete_07_20190129_141306
+DIDLM230::transaction_data_upload_complete_08_20190129_161148
+DIDLM230::transaction_data_upload_complete_09_20190129_180912
+DIDLM230::transaction_data_upload_complete_10_20190129_200405
+DIDLM230::transaction_data_upload_complete_11_20190129_220110
 
 Use grep to find all instances where the upload was successful. 
 ```
@@ -31,18 +47,31 @@ Once you've reviewed these results, determine how many matching occurrences were
 ```
 PROVIDE A SOLUTION HERE
 ```
+grep -e  "complete"  transaction_data_daily_event_log_20190129.dat | wc
+      12      12     744
+
 
 
 Use grep to find all instances where the upload failed. Ensure your output displays the line numbers for each match.
 
 ```
 PROVIDE A SOLUTION HERE
+grep -e  "fail"  transaction_data_daily_event_log_20190129.dat    
+DIDLM230::transaction_data_upload_failure_04_20190129_080133::WEAKSIGNAL
+DIDLM230::transaction_data_upload_failure_06_20190129_120000::SYSTMAINTE
+DIDLM230::transaction_data_upload_failure_07_20190129_140754::WEAKSIGNAL
+DIDLM230::transaction_data_upload_failure_09_20190129_180000::SYSOFFLINE
+
 ```
 
 Upon review, we would like to only view failures with error code SYSOFFLINE or WEAKSIGNAL.
 
 ```
 PROVIDE A SOLUTION HERE
+grep -E  "WEAKSIGNAL|SYSOFFLINE"  transaction_data_daily_event_log_20190129.dat 
+DIDLM230::transaction_data_upload_failure_04_20190129_080133::WEAKSIGNAL
+DIDLM230::transaction_data_upload_failure_07_20190129_140754::WEAKSIGNAL
+DIDLM230::transaction_data_upload_failure_09_20190129_180000::SYSOFFLINE
 ```
 
 
