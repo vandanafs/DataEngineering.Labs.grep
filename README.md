@@ -17,13 +17,18 @@ grep -e  "start"  transaction_data_daily_event_log_20190129.dat
 
 
 Once you've reviewed these results, repeat the process but this time using the -c flag to determine how many matching occurences were found.
-grep -c  "start"  transaction_data_daily_event_log_20190129.dat
-12
+
 
 ```
 PROVIDE A SOLUTION HERE
-
+grep -c  "start"  transaction_data_daily_event_log_20190129.dat
+12
 ```
+
+
+Use grep to find all instances where the upload was successful. 
+```
+PROVIDE A SOLUTION HERE
 grep -e  "complete"  transaction_data_daily_event_log_20190129.dat
 DIDLM230::transaction_data_upload_complete_00_20190129_000053
 DIDLM230::transaction_data_upload_complete_01_20190129_020035
@@ -37,18 +42,16 @@ DIDLM230::transaction_data_upload_complete_08_20190129_161148
 DIDLM230::transaction_data_upload_complete_09_20190129_180912
 DIDLM230::transaction_data_upload_complete_10_20190129_200405
 DIDLM230::transaction_data_upload_complete_11_20190129_220110
-
-Use grep to find all instances where the upload was successful. 
-```
-PROVIDE A SOLUTION HERE
 ```
 
 Once you've reviewed these results, determine how many matching occurrences were found. This time instead of using the -c flag, pipe the result to the wc program.
 ```
 PROVIDE A SOLUTION HERE
-```
 grep -e  "complete"  transaction_data_daily_event_log_20190129.dat | wc
       12      12     744
+
+
+```
 
 
 
