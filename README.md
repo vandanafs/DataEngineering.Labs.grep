@@ -21,6 +21,7 @@ Once you've reviewed these results, repeat the process but this time using the -
 
 ```
 PROVIDE A SOLUTION HERE
+
 grep -c  "start"  transaction_data_daily_event_log_20190129.dat
 12
 ```
@@ -29,6 +30,7 @@ grep -c  "start"  transaction_data_daily_event_log_20190129.dat
 Use grep to find all instances where the upload was successful. 
 ```
 PROVIDE A SOLUTION HERE
+
 grep -e  "complete"  transaction_data_daily_event_log_20190129.dat
 DIDLM230::transaction_data_upload_complete_00_20190129_000053
 DIDLM230::transaction_data_upload_complete_01_20190129_020035
@@ -47,6 +49,7 @@ DIDLM230::transaction_data_upload_complete_11_20190129_220110
 Once you've reviewed these results, determine how many matching occurrences were found. This time instead of using the -c flag, pipe the result to the wc program.
 ```
 PROVIDE A SOLUTION HERE
+
 grep -e  "complete"  transaction_data_daily_event_log_20190129.dat | wc
       12      12     744
 
@@ -59,6 +62,7 @@ Use grep to find all instances where the upload failed. Ensure your output displ
 
 ```
 PROVIDE A SOLUTION HERE
+
 grep -e  "fail"  transaction_data_daily_event_log_20190129.dat    
 DIDLM230::transaction_data_upload_failure_04_20190129_080133::WEAKSIGNAL
 DIDLM230::transaction_data_upload_failure_06_20190129_120000::SYSTMAINTE
@@ -71,6 +75,7 @@ Upon review, we would like to only view failures with error code SYSOFFLINE or W
 
 ```
 PROVIDE A SOLUTION HERE
+
 grep -E  "WEAKSIGNAL|SYSOFFLINE"  transaction_data_daily_event_log_20190129.dat 
 DIDLM230::transaction_data_upload_failure_04_20190129_080133::WEAKSIGNAL
 DIDLM230::transaction_data_upload_failure_07_20190129_140754::WEAKSIGNAL
