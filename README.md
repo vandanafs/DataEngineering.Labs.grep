@@ -13,7 +13,8 @@ Inside of the data directory there is a file called "transaction_data_daily_even
 Use grep to find all instances where the upload was initiated. 
 ```
 PROVIDE A SOLUTION HERE
-```
+grep -e  "start"  transaction_data_daily_event_log_20190129.dat
+
 
 Once you've reviewed these results, repeat the process but this time using the -c flag to determine how many matching occurences were found.
 ```
