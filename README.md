@@ -90,12 +90,21 @@ Inside the data directory, there is a file called "users.csv". This file contain
 Identify users that have email addresses with six or less characters before the @ symbol where none of these characters are numbers.
 ```
 PROVIDE A SOLUTION HERE
+
+grep -E ',[A-Za-z]{1,6}@' user*
+480,Beryle,Eve,bevedb@techcrunch.com,59.79.251.180,945-385-2799
+755,Conrade,Pre,cpreky@flickr.com,163.89.236.104,426-490-2406
+
 ```
 
 
 Marketing research has shown that the paper business is picking up in the academia space. Corporate has requested a list of all registered users that have an edu emaill address. Use grep to find the appropriate lines and output the results to a file called academia_users.txt.
 ```
 PROVIDE A SOLUTION HERE
+
+grep -E '@[A-Za-z]+(.edu)' users* 
+
+
 ```
 
 
@@ -106,6 +115,9 @@ Ryan Howard did a poor job and used the CC field rather than the BCC field for t
 Use grep to identify the user with a single regex pattern.
 ```
 PROVIDE A SOLUTION HERE
+
+grep -E '(,184\.).*(,38)' users*  
+24,Clarice,Curwood,ccurwoodn@typepad.com,184.223.202.53,380-764-9066
 ```
 
 
@@ -137,4 +149,53 @@ This regex expression will ultimately be part of an automated data pipeline so w
 
 ```
 PROVIDE A SOLUTION HERE
+
+grep -E "^[0-9]+\t[A-Z][A-Za-z -]+\t[A-Z][A-Za-z -]+\t(.*Developer|.*Software).*?\t[A-Z][a-z]+\t[A-Z][a-z]+?" candidates*
+
+
+candidates_1.txt:48	Chrotoem	Anders	Software Test Engineer III	Fresno	California
+candidates_1.txt:94	Pegeen	Drinkale	Software Consultant	Memphis	Tennessee
+candidates_1.txt:108	Heinrik	Epsly	Developer I	Nashville	Tennessee
+candidates_1.txt:129	Bobbye	Fyndon	Software Consultant	Columbus	Ohio
+candidates_1.txt:190	Eliot	McIlmorow	Developer II	Washington	District of Columbia
+candidates_1.txt:196	Annamaria	Fashion	Software Engineer I	Jackson	Mississippi
+candidates_1.txt:205	Marlie	Mendel	Web Developer I	Seattle	Washington
+candidates_1.txt:211	Dov	Rudyard	Software Consultant	Lansing	Michigan
+candidates_1.txt:217	Felike	Worden	Software Consultant	Jacksonville	Florida
+candidates_1.txt:279	Cyrille	Immer	Developer IV	Metairie	Louisiana
+candidates_1.txt:355	Lulita	Peartree	Software Engineer III	Tucson	Arizona
+candidates_1.txt:357	Cassius	Hales	Software Engineer I	Seattle	Washington
+candidates_1.txt:363	Gay	Murrock	Software Test Engineer III	Baltimore	Maryland
+candidates_1.txt:377	Burk	Shaul	Senior Developer	Boston	Massachusetts
+candidates_1.txt:383	Garrot	Nockolds	Developer II	Topeka	Kansas
+candidates_1.txt:422	Maible	Payle	Developer III	Tucson	Arizona
+candidates_1.txt:426	Corilla	Dollman	Web Developer IV	Minneapolis	Minnesota
+candidates_1.txt:456	Keslie	Dooland	Software Test Engineer II	Boise	Idaho
+candidates_1.txt:496	Mac	Le Clercq	Developer IV	Modesto	California
+candidates_2.txt:508	Ariela	Witherby	Senior Developer	Jackson	Mississippi
+candidates_2.txt:564	Lauralee	Brenton	Software Test Engineer III	Philadelphia	Pennsylvania
+candidates_2.txt:710	Jamima	Smithies	Software Consultant	Kalamazoo	Michigan
+candidates_2.txt:742	Grantham	Peddar	Senior Developer	Dallas	Texas
+candidates_2.txt:758	Kendell	Rydeard	Senior Developer	Kalamazoo	Michigan
+candidates_2.txt:796	Eduard	Joyes	Software Consultant	Englewood	Colorado
+candidates_2.txt:805	Humfried	Fenning	Software Consultant	Bakersfield	California
+candidates_2.txt:844	Karilynn	Sherrock	Developer III	Phoenix	Arizona
+candidates_2.txt:849	Laverne	Bake	Web Developer I	Modesto	California
+candidates_2.txt:855	Gavrielle	Tidbold	Web Developer II	Atlanta	Georgia
+candidates_2.txt:886	Jelene	Shireff	Senior Developer	Minneapolis	Minnesota
+candidates_2.txt:888	Esme	Glyde	Developer III	Harrisburg	Pennsylvania
+candidates_2.txt:901	Ryon	Kindall	Developer IV	Washington	District of Columbia
+candidates_2.txt:917	Kathleen	Yankeev	Software Engineer IV	Canton	Ohio
+candidates_2.txt:924	Richmound	Brittan	Developer IV	Fullerton	California
+candidates_2.txt:948	Ringo	Govier	Senior Developer	Seattle	Washington
+
+
+
+
+
+
+
+
+
+
 ```
